@@ -8,7 +8,6 @@ import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.Optional;
-import java.util.Random;
 import java.util.ResourceBundle;
 
 public class PersonController implements Initializable {
@@ -22,7 +21,7 @@ public class PersonController implements Initializable {
     @FXML private Label cityLabel;
     @FXML private Label birthdayLabel;
     @FXML private GridPane personGrid;
-    private HelloApplication mainApp;
+    private MainApp mainApp;
 
 
 
@@ -39,7 +38,7 @@ public class PersonController implements Initializable {
                 (observable, oldValue, newValue) -> showPersonDetails(newValue));
     }
 
-    public void setMainApp(HelloApplication mainApp) {
+    public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
         mainApp.setDummyPersonData();
         // Add observable list data to the table

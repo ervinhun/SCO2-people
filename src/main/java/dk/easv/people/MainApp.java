@@ -17,13 +17,13 @@ import java.io.IOException;
 import java.util.Objects;
 
 
-public class HelloApplication extends Application {
+public class MainApp extends Application {
     private ObservableList<Person> personData;
     private BorderPane root;
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("root-layer.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("root-layer.fxml"));
         root = fxmlLoader.load();
 
         Scene scene = new Scene(root, 610, 430);
@@ -65,7 +65,7 @@ public class HelloApplication extends Application {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(HelloController.class.getResource("person-overview.fxml"));
+            loader.setLocation(MainController.class.getResource("person-overview.fxml"));
             AnchorPane personOverview = loader.load();
 
             // Set person overview into the center of root layout.
@@ -84,7 +84,7 @@ public class HelloApplication extends Application {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(HelloApplication.class.getResource("person-edit-dialog.fxml"));
+            loader.setLocation(MainApp.class.getResource("person-edit-dialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
